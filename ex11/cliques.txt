@@ -1,0 +1,28 @@
+A clique is a subset of vertices of an undirected graph such that every two
+distinct vertices in the clique are adjacent. The task of finding whether there
+is a clique of a given size in a graph (the clique problem) is NP-complete.
+
+Since the vertices in a clique are pairwise adjacent, the vertices in the clique
+must be assigned distinct colours. Thus, any proper colouring of the graph will
+require at least as many colours as the size of the largest clique in the graph.
+
+The maximum clique problem is the following: given a group of vertices some of
+which have edges in between them, the maximal clique is the largest subset of
+vertices in which each point is directly connected to every other vertex in the
+subset. Every time a new point is added, the number of total cliques that must
+be searched at least doubles; hence we have an exponentially growing problem. It
+is a NP-hard problem, so no polynomial time algorithms are expected to be found. A
+single maximal clique can be found by a straightforward greedy algorithm. The
+most naïve approach to finding a maximum clique involves enumerating all 2n subsets,
+and testing up to n(n – 1)/2 edges in each to determine whether the graph induced
+by that subset is complete.  This approach requires time O((n^2) * (2^n)). This can
+be optimized to a complexity of O(3^(n/3)) for generating all maximal cliques of
+an undirected graph.
+
+The exact algorithms for the graph colouring follow the same general line of
+development as for the maximum clique problem.  Given an
+undirected graph G = (V, E), a legal k-colouring of G is a partition of V into k
+independent sets (colour classes). The graph k-colouring problem is to find a legal
+k-colouring of G for a given k. The graph colouring problem is to determine the
+smallest integer k (its chromatic number χ(G)) such that there exists k-colouring
+of G so that G is well-coloured.
