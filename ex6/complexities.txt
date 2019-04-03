@@ -1,0 +1,6 @@
+               Best Average Worst                  stable
+Bubble sort     O(n) O(n^2) O(n^2)                 yes
+Insertion sort  O(n) O(n^2) O(n^2)                 yes
+Bucket sort   O(n+k) O(n+k) O(n^2)                 yes
+Merge sort    O(n log(n)) O(n log(n)) O(n log(n))  yes
+Quick sort    O(n log(n)) O(n log(n)) O(n^2)       no
