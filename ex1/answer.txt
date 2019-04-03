@@ -1,0 +1,95 @@
+Problem set B
+First algorithm:
+Worst case complexity- nlogn + n
+
+find_majority_int_in_array(array)
+{
+  length <- length of array
+  halflength <- ceiling(length/2)
+  array <- sort array into ascending order with merge sort
+  for (index = 0; index < halflength; index++)
+  {
+    if(halflength is even)
+    {
+      if(array[i] == array[i+halflength])
+      {
+        return array[i];
+      }
+      else
+      {
+        return 'No'
+      }
+    else
+    {
+      if(i != halflength - 1)
+      {
+        if(array[i] == array[i+halflength])
+        {
+          return array[i]
+        }
+        else
+        {
+          return 'No'
+        }
+      }
+    }
+  }
+ }
+}
+
+The algorithm first sorts the array using the merge sort algorithm which has
+a constant complexity of nlogn since it divides and merges the array in the
+worst, average and best case. With the array sorted, the algorithm scans over
+the elements in pairs of elements separated by half of the length of the array
+(that many elements) and it compares if they are the same - if they are then
+that element has to be the majoriti since there elements in between are the same
+as they, because the array is sorted. In the worst case, the algorithm goes
+through the sorted array n times - if the majority of the elements is in the
+second half of the array or if there is no majority element.
+
+SECOND ALGORITHM
+Complexity: 2n
+
+find_majority_int_in_array(array)
+{
+  length <- length of array
+  valueCountMap <- create a new map structure
+  for loop through array with index incremented by 1
+  {
+    valueCountMap[array[index]] <- 1
+    if(index is not 0)
+    {
+      if(map[array[index]] does not exist))
+      {
+        increment value at valueCountMap[array[index]];
+      }
+      else
+      {
+        valueCountMap[array[index]] <- 1
+      }
+    }
+  }
+  countPrevious <- 0
+  count <- 0
+  for pair in valueCountMap
+  {
+    count <- pair[2]
+    if(count greater than countPrevious)
+    {
+      countPrevious <- count
+    }
+  }
+  if(countPrevious greater than ceiling(length/2))
+    return value associated to countPrevious - k
+  else
+    return 'No'
+}
+
+This algorithm first scans over the array and creates a new mapping/dictionary
+element for each new value it encounters, otherwise it increments the count of
+times that it has encountered the value associated with it.
+After that it scans over the map/dictionary of value-count mappings remembering
+the highest count number - if there is no greater number than the latest
+count number rememberd - countPrevious it checks if the count number -
+countPrevious is greater than half of the length of the array, if it is it
+returns it, otherwise it returns 'No'
