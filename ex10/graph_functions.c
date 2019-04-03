@@ -1,15 +1,9 @@
 #include "graph.h"
 
 
-// Important: you do not need to allocate memory for
-// mygraph. Currently this is already allocated on
-// the stack in the stub for part1 and read_graph
-// passes a pointer to this stack-allocated graph
-// into this function
 void freeGraph(Graph *mygraph);
 int initialize_graph (Graph *mygraph, int MaxSize)
 {
-  // your code goes here
   mygraph->table = (Node*)malloc(sizeof(Node) * MaxSize);
   mygraph->MaxSize = MaxSize;
   for(int index=0; index<MaxSize; index++)
@@ -28,7 +22,6 @@ int initialize_graph (Graph *mygraph, int MaxSize)
 }
 int insert_graph_node (Graph *mygraph, int n, char *name)
 {
-  // your code goes here
   mygraph->table[n].name = (char*)malloc(sizeof(name));
   if(mygraph->table[n].name == NULL)
   {
@@ -42,7 +35,6 @@ int insert_graph_node (Graph *mygraph, int n, char *name)
 
 int insert_graph_link (Graph *mygraph, int source, int target)
 {
-  // your code goes here
   List *newLink = (List*)malloc(sizeof(List));
   newLink->index = target;
   newLink->next = NULL;
@@ -84,7 +76,6 @@ int read_graph (Graph *mygraph, char *filename)
  * or if any subsequent line is not a NODE or EDGE command.
  * Does not check that node numbers do not exceed the maximum number
  * Defined by the MAX command.
- * 8/2/2010 - JLS
  */
 {
   FILE *fp;
