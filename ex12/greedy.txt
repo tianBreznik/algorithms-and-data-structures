@@ -1,0 +1,15 @@
+The difference between the 0/1 and the fractional version of the Knapsack problem is the following:
+At the 0/1 version we want to pick each item either fully or we don't pick it. At the
+fractional version we can take a part of the item. The Greedy choice property is states
+as:
+"We choose at each step the 'best' item, which is the one with the greatest benefit and the
+smallest weight. We do the same choice until the Knapsack is full or there aren't any objects
+that fill in the Knapsack."
+The greedy algorithm works for the fractional knapsack problem because the globally optimal
+choice is to take the item with the largest value/weight. The greedy choice property holds here.
+In 0/1 Knapsack, this property no longer holds. For example let the knapsack capacity be W=c,
+and have n=2 items. Also let w1=c and p1=c−1, and w2=1 and p2=1. The greedy algorithm will
+select only item 2, but the optimal solution contains only item 1. Meaning that
+the solution we obtain is (c−1) times as bad as the true optimum. That is arbitrarily bad, even
+if you wanted to approximate the optimum. The greedy algorithm works because we can “cut up”
+items to fill the rest of the knapsack, you cannot do that in the 0/1 case.

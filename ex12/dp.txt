@@ -1,0 +1,19 @@
+Simple Subproblems:The knapsack problem can be broken down into simple local optimization problem
+where a bound is found for a different configuration of the knapsack. For example,
+filling out the table, we solve the knapsack problem for a smaller number of entries.
+More specifically:
+We construct an array V[0,....,n,0,..., W], For 1<=i<=n and 0<=w<=W. The entry V[i,w]
+will store the maximum (combined) computing time of any subset of files {1,2,...,i}
+of (combined) size at most w. If we can compute all the entries of this array, then
+the array entry V[n, W] will contain the maximum computing time of files that can 
+fit into the storage, that is, the solution to our problem.
+
+Subproblem Optimality: The optimal solution to the problem is a composition of optimal
+subproblem solutions in combined in a simple way. The solution to the Knapsack problem
+using the tale algorithm as an example, is a composition of previous optimal solutions 
+to subproblems in the table.
+
+Subproblem overlapping: Solutions to different knapsack instances might share some
+common subprblem solutions, that is why we remember the optimal solutions in finding 
+the optimal solution and build the new solution on top of that overlaping subproblem 
+solution
