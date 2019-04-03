@@ -1,0 +1,4 @@
+               Best Average Worst
+Bubble sort     O(n) O(n^2) O(n^2)
+Insertion sort  O(n) O(n^2) O(n^2)
+Bucket sort   O(n+k) O(n+k) O(n^2)
