@@ -1,0 +1,5 @@
+question: Is it a bee?
+object: Maja
+question: Is it edible?
+object: Pizza
+object: a pangolin
